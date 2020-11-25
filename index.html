@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, inital-scale=1.0, shrink-to-fit=no">
+        <title> Carta CSS </title>
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+            }
+
+            #card{
+                display: flex;
+                justify-content: center;
+                transform-style: preserve-3d;
+                transition: all .75s;
+            }
+
+            .face{
+                width: 100px;
+                height: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                position: absolute;
+            }
+
+            #front{
+                background-color: rgb(0, 135, 212);
+                transform: rotateY(180deg);
+            }
+
+            #back{
+                background-color: rgb(0, 56, 80);
+            }
+
+            .flip{
+                transform: rotateY(180deg);
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+        <div id="card">
+            <div id="front" class="face">
+                CARD
+            </div>
+
+            <div id="back" class="face">
+                CARD
+            </div>
+        </div>
+
+        <script>
+            const card = document.querySelector('#card')
+                        card.addEventListener('click', (e) => {
+                                        card.classList.toggle('flip')
+                                    } )
+        </script>
+
+    </body>
+</html>
